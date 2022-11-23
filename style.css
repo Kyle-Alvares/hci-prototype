@@ -1,0 +1,19 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Satoshi', sans-serif;
+}
+
+h1 {
+    font-size: 48px;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+}
+
+.scan-qr {
+    padding-top: 128px;
+}
