@@ -149,13 +149,12 @@ p, li {
     right: 0;
     background-color: var(--blue-90);
     color: var(--blue-20);
-    font-size: 32px;
+    font-size: 30px;
     font-weight: 800;
-    padding: 8px;
-    /* padding-bottom: 16px; */
+    /* padding: 4px; */
     border-radius: 10px 10px 0 0;
 }
 
 #pay {
-    height: 64px;
+    height: 48px;
 }
