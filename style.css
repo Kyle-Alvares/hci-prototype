@@ -122,6 +122,8 @@ p, li {
 }
 
 .counter .button {
+    border: none;
+    outline: none;
     background-color: var(--blue-80);
     color: var(--blue-20);
     height: 20px;
@@ -129,6 +131,7 @@ p, li {
     border-radius: 50%;
     line-height: 19px;
     font-weight: 600;
+    margin: 0 4px;
 }
 
 .counter .button:hover {

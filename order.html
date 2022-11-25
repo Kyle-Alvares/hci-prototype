@@ -7,6 +7,7 @@
     <title>Orders</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://api.fontshare.com/v2/css?f[]=satoshi@1,2&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="scan-qr center">
@@ -16,11 +17,11 @@
                 <div class="menu-item">
                     <img src="assets/burger.png" alt="">
                     <p class="item">Supreme Burger</p>
-                    <p class="price">6.99</p>
+                    <p class="price">7.99</p>
                     <div class="counter">
-                        <div class="button remove">-</div>
-                        <div>0</div>
-                        <div class="button add">+</div>
+                        <button class="button remove" onclick="remove('burger')">-</button>
+                        <div id="burger" price="7.99">0</div>
+                        <button class="button add" onclick="add('burger')">+</button>
                     </div>
                 </div>
                 <div class="menu-item">
@@ -28,9 +29,9 @@
                     <p class="item">Club Sandwich</p>
                     <p class="price">5.49</p>
                     <div class="counter">
-                        <div class="button remove">-</div>
-                        <div>0</div>
-                        <div class="button add">+</div>
+                        <button class="button remove" onclick="remove('club')">-</button>
+                        <div id="club" price="5.49">0</div>
+                        <button class="button add" onclick="add('club')">+</button>
                     </div>
                 </div>
                 <div class="menu-item">
@@ -38,9 +39,9 @@
                     <p class="item">Tacos</p>
                     <p class="price">6.99</p>
                     <div class="counter">
-                        <div class="button remove">-</div>
-                        <div>0</div>
-                        <div class="button add">+</div>
+                        <button class="button remove" onclick="remove('taco')">-</button>
+                        <div id="taco" price="6.99">0</div>
+                        <button class="button add" onclick="add('taco')">+</button>
                     </div>
                 </div>
                 <div class="menu-item">
@@ -48,9 +49,9 @@
                     <p class="item">Seasoned Fries</p>
                     <p class="price">4.99</p>
                     <div class="counter">
-                        <div class="button remove">-</div>
-                        <div>0</div>
-                        <div class="button add">+</div>
+                        <button class="button remove" onclick="remove('fries')">-</button>
+                        <div id="fries" price="4.99">0</div>
+                        <button class="button add" onclick="add('fries')">+</button>
                     </div>
                 </div>
                 <div class="menu-item">
@@ -58,9 +59,9 @@
                     <p class="item">Chicken Wrap</p>
                     <p class="price">5.49</p>
                     <div class="counter">
-                        <div class="button remove">-</div>
-                        <div>0</div>
-                        <div class="button add">+</div>
+                        <button class="button remove" onclick="remove('wrap')">-</button>
+                        <div id="wrap" price="5.49">0</div>
+                        <button class="button add" onclick="add('wrap')">+</button>
                     </div>
                 </div>
                 <div class="menu-item">
@@ -68,9 +69,9 @@
                     <p class="item">Buffalo Wings</p>
                     <p class="price">8.49</p>
                     <div class="counter">
-                        <div class="button remove">-</div>
-                        <div>0</div>
-                        <div class="button add">+</div>
+                        <button class="button remove" onclick="remove('wings')">-</button>
+                        <div id="wings" price="8.49">0</div>
+                        <button class="button add" onclick="add('wings')">+</button>
                     </div>
                 </div>
                 <div class="menu-item">
@@ -78,9 +79,9 @@
                     <p class="item">Lava Cake</p>
                     <p class="price">2.99</p>
                     <div class="counter">
-                        <div class="button remove">-</div>
-                        <div>0</div>
-                        <div class="button add">+</div>
+                        <button class="button remove" onclick="remove('cake')">-</button>
+                        <div id="cake" price="2.99">0</div>
+                        <button class="button add" onclick="add('cake')">+</button>
                     </div>
                 </div>
                 <div class="menu-item">
@@ -88,17 +89,45 @@
                     <p class="item">Cola</p>
                     <p class="price">1.99</p>
                     <div class="counter">
-                        <div class="button remove">-</div>
-                        <div>0</div>
-                        <div class="button add">+</div>
+                        <button class="button remove" onclick="remove('cola')">-</button>
+                        <div id="cola" price="1.99">0</div>
+                        <button class="button add" onclick="add('cola')">+</button>
                     </div>
                 </div>
             </div>
             <div class="total">
                 <span>Total: $</span>
-                <span>0.00<span>
+                <span id="total">0.00<span>
             </div>
         </div>
     </div>
+    <script>
+
+        let total = 0;
+
+        function setTotal(amount) {
+            total += amount;
+            if(total <= 0) total = 0;
+            $('#total').text(total.toFixed(2));
+        }
+
+        function remove(id) {
+            let amount = parseInt($(`#${id}`).text()) - 1;
+            let price = $(`#${id}`).attr('price');
+            if(amount >= 0) {
+                $(`#${id}`).text(amount);
+                setTotal(-price);
+            }
+        }
+
+        function add(id) {
+            let amount = parseInt($(`#${id}`).text()) + 1;
+            let price = $(`#${id}`).attr('price');
+            $(`#${id}`).text(amount);
+            setTotal(+price);
+        }
+
+        setTotal(0);
+    </script>
 </body>
 </html>
