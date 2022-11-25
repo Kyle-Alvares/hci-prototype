@@ -7,13 +7,16 @@
     <title>Assignment 3b</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://api.fontshare.com/v2/css?f[]=satoshi@1,2&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="scan-qr center">
         <div>
             <p>To get started</p>
             <h1>Scan Me</h1>
-            <img src="qrcode.png" alt="scan qr code">
+            <a href="/order.html">
+                <img src="qrcode.png" alt="scan qr code">
+            </a>
             <h3>Instructions</h3>
             <ol class="instructions">
                 <li>Open the camera app on your mobile device.</li>
@@ -21,6 +24,19 @@
                 <li>Click the link to connect.</li>
             </ol>
             <p class="highlight" style="margin-top: 32px;">If you are having trouble please contact a staff member.</p>
+        </div>
+    </div>
+    <div class="modal-backdrop" id="instructions">
+        <div class="modal">
+            <div>
+                <p style="font-size: 32px; font-weight: 600;">Instructions</p>
+                <p style="margin-top: 16px">
+                    To continue, you can either scan the barcode with your phone or click the barcode to proceed. 
+                    Ideally, the actions made on your mobile device would reflect on the kiosk, but because this 
+                    prototype does not have a backend, please make this assumption.
+                </p>
+                <button style="margin-top: 32px" onclick="$('#instructions').css('display', 'none');">Close</button>
+            </div>
         </div>
     </div>
 </body>

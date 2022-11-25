@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pay</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://api.fontshare.com/v2/css?f[]=satoshi@1,2&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"
+        integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="scan-qr">
+        <h1 id="order"></h1>
+        <img style="height: 350px;" src="assets/credit-card.webp" alt="credit_card">
+        <p style="font-size: 32px; font-weight: 700; margin-top: -48px;">Payment approved</p>
+        <p style="margin-top: 32px; color: var(--blue-80);">Please wait in the pickup line and wait for your order to be called out.</p>
+    </div>
+    <script>
+        let random = Math.floor(Math.random() * 100000) + 10000;
+        $('#order').text(`Order: #${random}`);
+    </script>
+</body>
+
+</html>

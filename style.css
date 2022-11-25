@@ -42,6 +42,45 @@ p, li {
     font-weight: 500;
 }
 
+.modal-backdrop {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal {
+    display: flex;
+    align-items: center;
+    margin-top: 100px;
+    height: 400px;
+    width: 500px;
+    background-color: var(--blue-10);
+    border-radius: 10px;
+    padding: 32px 64px;
+    text-align: center;
+}
+
+.modal button {
+    outline: none;
+    border: none;
+    background-color: var(--blue-80);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+.modal button:hover {
+    cursor: pointer;
+    background-color: var(--blue-60);
+
+}
+
 .center {
     display: flex;
     justify-content: center;
@@ -157,4 +196,45 @@ p, li {
 
 #pay {
     height: 48px;
+}
+
+.payment-options {
+    margin-top: 32px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-bottom: 32px;
+}
+
+.payment-option {
+    background-color: white;
+    border-radius: 10px;
+    padding-bottom: 32px;
+    margin: 16px;
+    width: 300px;
+}
+
+.payment-option img {
+    max-height: 200px;
+}
+
+.payment-option a {
+    text-align: center;
+    background-color: var(--blue-80);
+    color: var(--blue-20);
+    padding: 8px 16px;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: 0.2s ease;
+}
+
+.payment-option a:hover {
+    transition: 0.2s ease;
+    color: white;
+    background-color: var(--blue-60);
+}
+
+img.barcode {
+    height: auto;
+    width: 80%;
 }
