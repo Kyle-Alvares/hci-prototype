@@ -142,6 +142,7 @@ p, li {
 .total {
     display: flex;
     justify-content: center;
+    align-items: center;
     position: fixed;
     width: 100%;
     bottom: 0px;
@@ -150,7 +151,11 @@ p, li {
     color: var(--blue-20);
     font-size: 32px;
     font-weight: 800;
-    padding: 20px;
+    padding: 8px;
     /* padding-bottom: 16px; */
     border-radius: 10px 10px 0 0;
+}
+
+#pay {
+    height: 64px;
 }
