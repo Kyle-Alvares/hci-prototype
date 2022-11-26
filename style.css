@@ -160,7 +160,7 @@ p, li {
     margin:12px 5px;
 }
 
-.counter .button {
+.counter button {
     border: none;
     outline: none;
     background-color: var(--blue-80);
@@ -171,6 +171,18 @@ p, li {
     line-height: 19px;
     font-weight: 600;
     margin: 0 4px;
+}
+
+@media only screen and (max-device-width: 480px) {
+    .counter div {
+        font-size: 24px;
+    }
+    .counter button {
+        font-size: 24px;
+        height: 24px;
+        width: 24px;
+        line-height: 23px;  
+    }
 }
 
 .counter .button:hover {
