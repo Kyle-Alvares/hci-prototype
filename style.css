@@ -104,8 +104,8 @@ p, li {
 }
 
 .highlight {
-    padding: 2px 4px;
-    background-color: var(--blue-10);
+    padding: 2px 8px;
+    background-color: white;
     color: var(--blue-80);
     border-radius: 5px;
 }
